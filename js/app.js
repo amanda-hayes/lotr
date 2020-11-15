@@ -85,6 +85,7 @@ function makeHobbits() {
 
   // display an `unordered list` of hobbits in the shire
   let listOfHobbits = document.createElement("ul");
+  listOfHobbits.setAttribute("id", "listOfHobbits");
 
   for (let i = 0; i < hobbits.length; i++) {
     let listItem = document.createElement("li");
@@ -173,10 +174,11 @@ function makeBuddies () {
 
   // create an `aside` tag
   let buddiesAsideTag = document.createElement("aside");
-      buddiesAsideTag.setAttribute("id", "buddies");
+      
    
   // put an `unordered list` of the `'buddies'` in the aside
   let listOfBuddies = document.createElement("ul");
+  listOfBuddies.setAttribute("id", "buddies");
 
   for (let i = 0; i < buddies.length; i++) {
     let listItem = document.createElement("li");
@@ -195,7 +197,6 @@ function makeBuddies () {
 
 }
 
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 5 complete - Made the Buddies".
 
@@ -208,7 +209,12 @@ function leaveTheShire() {
   console.log("6: leaveTheShire");
 
   // assemble the `hobbits` and move them to `rivendell`
+
+  let listOfHobbits = document.getElementById("listOfHobbits");
+  let rivendellLand = document.getElementById(lands[1]);
+  rivendellLand.appendChild(listOfHobbits);
 }
+
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 6 complete - Left the Shire"
