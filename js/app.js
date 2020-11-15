@@ -37,9 +37,11 @@ const lands = [
 
 function makeMiddleEarth() {
   console.log("1: makeMiddleEarth");
+
   let middleEarthSectionTag = document.createElement("section");
   middleEarthSectionTag.setAttribute("id", "middle-earth");
   console.log(middleEarthSectionTag);
+
   for (let i = 0; i < lands.length; i++) {
     let articleTag = document.createElement("article");
     articleTag.setAttribute("id", lands[i]);
@@ -48,6 +50,7 @@ function makeMiddleEarth() {
     articleTag.appendChild(h1Tag);
     middleEarthSectionTag.appendChild(articleTag);
   }
+
   let bodyTag = document.getElementsByTagName("body")[0];
   bodyTag.appendChild(middleEarthSectionTag);
 }
@@ -62,10 +65,13 @@ function makeMiddleEarth() {
 // hint: get 'The-Shire' by using its id
 function makeHobbits() {
   console.log("2: makeHobbits");
+
   let listOfHobbits = document.createElement("ul");
   listOfHobbits.setAttribute("id", "listOfHobbits");
+
   for (let i = 0; i < hobbits.length; i++) {
     let listItem = document.createElement("li");
+
     listItem.classList.add("hobbit");
     listItem.setAttribute("id", hobbits[i]);
     listItem.innerHTML = hobbits[i];
@@ -223,8 +229,12 @@ function theBalrog() {
 function hornOfGondor() {
   console.log("10: hornOfGondor");
   // pop up an alert that the horn of gondor has been blown
+  alert("The horn of Gondor has been blown. Boromir's been killed by the Uruk-hai!")
   // Boromir's been killed by the Uruk-hai!
   // Remove `Boromir` from the Fellowship
+  
+  let boromir = document.getElementById(buddies[4]); 
+  boromir.remove();
 }
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 10 complete - horn of gandor blew and Boromir is dead"
@@ -234,7 +244,18 @@ function hornOfGondor() {
 function itsDangerousToGoAlone() {
   console.log("11: itsDangerousToGoAlone");
   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+  let frodo = document.getElementById(hobbits[0]);
+  let samwise = document.getElementById(hobbits[1]);
+  let mordorLand = document.getElementById(lands[2]);
+  mordorLand.appendChild(frodo);
+  mordorLand.appendChild(samwise);
+
   // add a div with an id of `'mount-doom'` to `Mordor`
+  let div = document.createElement("div");
+  div.setAttribute("id", "mount-doom");
+  div.innerHTML = "Mount Doom";
+  
+  mordorLand.appendChild(div);
 }
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 11 complete - Sam and Frodo are in Mordor and Mount Doom has been created"
