@@ -89,8 +89,9 @@ function makeHobbits() {
   for (let i = 0; i < hobbits.length; i++) {
     let listItem = document.createElement("li");
     
-    // give each hobbit a class of `hobbit`
+  // give each hobbit a class of `hobbit`
     listItem.classList.add("hobbit");
+    listItem.setAttribute("id", hobbits[i]);
     listItem.innerHTML = hobbits[i];
 
     listOfHobbits.appendChild(listItem);
@@ -118,11 +119,15 @@ function keepItSecretKeepItSafe() {
   console.log("3: keepItSecretKeepItSafe");
 
   // create a div with an id of `'the-ring'`
+  const div = document.createElement("div");
 
   // give the div a class of `'magic-imbued-jewelry'`
+  div.classList.add("magic-imbued-jewelry");
 
+  let frodo = document.getElementById(hobbits[0]);
+  
   // add the ring as a child of `Frodo`
-
+  frodo.appendChild(div);
 }
 
 // COMMIT YOUR WORK
