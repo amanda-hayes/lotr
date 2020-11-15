@@ -148,7 +148,6 @@ function makeBaddies() {
   for (let i = 0; i < baddies.length; i++) {
     let listItem = document.createElement("li");
     
-  // give each hobbit a class of `hobbit`
     listItem.classList.add("baddies");
     listItem.setAttribute("id", baddies[i]);
     listItem.innerHTML = baddies[i];
@@ -156,11 +155,9 @@ function makeBaddies() {
     listOfBaddies.appendChild(listItem);
   }
 
+  // remember to append them to Mordor
   let mordorLand = document.getElementById(lands[2]);
   mordorLand.appendChild(listOfBaddies);
-
-  // remember to append them to Mordor
-
 }
 
 // COMMIT YOUR WORK
@@ -175,12 +172,29 @@ function makeBuddies () {
   console.log("5: makeBuddies");
 
   // create an `aside` tag
+  let buddiesAsideTag = document.createElement("aside");
+      buddiesAsideTag.setAttribute("id", "buddies");
    
   // put an `unordered list` of the `'buddies'` in the aside
-   
+  let listOfBuddies = document.createElement("ul");
+
+  for (let i = 0; i < buddies.length; i++) {
+    let listItem = document.createElement("li");
+
+    listItem.classList.add("buddies");
+    listItem.setAttribute("id", buddies[i]);
+    listItem.innerHTML = buddies[i];
+
+    listOfBuddies.appendChild(listItem);
+    buddiesAsideTag.appendChild(listOfBuddies)
+  }
+
   // insert your aside as a child element of `rivendell`
+  let rivendellLand = document.getElementById(lands[1]);
+  rivendellLand.appendChild(buddiesAsideTag);
 
 }
+
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 5 complete - Made the Buddies".
