@@ -48,7 +48,6 @@ function makeMiddleEarth () {
 
   //   2a. creates an article tag (there should be one for each land when the loop is done)
 
-    
     for (let i = 0; i < lands.length; i++) {
 
       //   2b. gives each land article an `id` tag of the corresponding land name
@@ -69,8 +68,6 @@ function makeMiddleEarth () {
     // 3. append the section to the body of the DOM.
     let bodyTag = document.getElementsByTagName("body")[0];
     bodyTag.appendChild(middleEarthSectionTag);
-    
-
 }
 
 // COMMIT YOUR WORK
@@ -101,11 +98,8 @@ function makeHobbits() {
   let shireArticle = document.getElementById(lands[0]);
   shireArticle.appendChild(listOfHobbits);
 
-
   // hint: create a 'ul' outside the loop into which to append the 'li's
-
   // hint: get 'The-Shire' by using its id
-
 }
 
 // COMMIT YOUR WORK
@@ -121,6 +115,7 @@ function keepItSecretKeepItSafe() {
 
   // create a div with an id of `'the-ring'`
   const div = document.createElement("div");
+  div.setAttribute("id", "the-ring");
 
   // give the div a class of `'magic-imbued-jewelry'`
   div.classList.add("magic-imbued-jewelry");
@@ -133,7 +128,6 @@ function keepItSecretKeepItSafe() {
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 3 complete - Made the ring and gave it to Frodo".
-
 
 // ============
 // Chapter 4
@@ -215,7 +209,6 @@ function leaveTheShire() {
   rivendellLand.appendChild(listOfHobbits);
 }
 
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 6 complete - Left the Shire"
 
@@ -228,9 +221,11 @@ function beautifulStranger() {
   console.log("7: beautifulStranger");
 
   // change the `'Strider'` text to `'Aragorn'`
+  let strider = document.getElementById(buddies[3]);
+  strider.innerHTML = "Aragorn";
+  buddies[3] = "Aragorn";
 }
-let strider = document.getElementById(buddies[3]);
-buddies[3] = "Aragorn";
+
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 7 complete - Strider is changed to Aragorn"
@@ -242,13 +237,30 @@ buddies[3] = "Aragorn";
 
 function forgeTheFellowShip() { 
   console.log("8: forgeTheFellowShip");
+
   // create a new div called `'the-fellowship'` within `rivendell`
+  const div = document.createElement("div");
+  div.setAttribute("id", "the-fellowShip");
+
   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+  // let rivendellList = document.getElementById(lands[i]);
+  // console.log(rivendellList[0]);
+  
+  // for (let i = 0; i < rivendellList.length; i++) {
+  //   console.log(rivendellList[i]);
+  // }
+  
+  //add the list of hobbits and list of buddies to this UL
+
+  // let rivendellLand = document.getElementById(lands[1]);
+  // rivendellLand.appendChild(div);
+
+
   // after each character is added make an alert that they // have joined your party
   
   // NOTE: This won't change what you see in the browser.  Use your Elements tab of your Inspector tools to make sure that it worked.
+  
 }
-
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 8 complete - The Fellowship is created"
@@ -260,7 +272,13 @@ function forgeTheFellowShip() {
 function theBalrog() { 
   console.log("9: theBalrog");
    // change the `'Gandalf'` text to `'Gandalf the White'`
-   // apply the following style to the element, make the // background 'white', add a grey border
+   let gandalf = document.getElementById(buddies[0]);
+    gandalf.innerHTML = "Gandalf the White";
+    buddies[3] = "Gandalf the White";
+   
+    // apply the following style to the element, make the // background 'white', add a grey border
+   document.getElementById(buddies[0]).style.backgroundColor = "white";
+   document.getElementById(buddies[0]).style.borderColor = "grey";
 }
 
 // COMMIT YOUR WORK
