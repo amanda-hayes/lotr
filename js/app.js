@@ -229,6 +229,8 @@ function beautifulStranger() {
 
   // change the `'Strider'` text to `'Aragorn'`
 }
+let strider = document.getElementById(buddies[3]);
+buddies[3] = "Aragorn";
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 7 complete - Strider is changed to Aragorn"
